@@ -8,9 +8,8 @@ async function init() {
 };
 
 async function getPhotographers() {
-  return await fetch('../../data/photographers.json')
+  return await fetch('./../../data/photographers.json')
           .then(res => res.json())
-          .then(data => data.photographers)
 }
 
 async function displayData(photographers) {

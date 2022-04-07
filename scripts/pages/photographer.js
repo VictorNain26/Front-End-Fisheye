@@ -1,7 +1,10 @@
-const getPhotographers = async () => {
+import photographerFactory from '../factories/photographer.js'
+import mediaFactory from '../factories/media.js'
+
+async function getPhotographers() {
     const photographerId = (new URL(document.location)).searchParams.get("id");
 
-    const  medias = await fetch('../../data/photographers.json')
+    const  medias = await fetch('../../data/medias.json')
             .then(res => res.json())
             .then(data => data.media.filter(ele => ele.photographerId === parseInt(photographerId)));
 
@@ -12,21 +15,30 @@ const getPhotographers = async () => {
     return { photographer, medias }
 }
 
-function displayData(photographers) {
-    const photographersSection = document.querySelector(".photographer_section");
+function displayPhotographerData(photographer) {
+    const formName = document.querySelector(".modal h2");
+    const photographerModel = photographerFactory(photographer);
 
+    const pFormName = document.createElement( 'h2' );
+    pFormName.textContent = photographerModel.name
+    formName.insertAdjacentElement("afterend" ,pFormName)
 
-    photographers.forEach((photographer) => {
-        const photographerModel = photographerFactory(photographer);
-        const userCardDOM = photographerModel.getUserCardDOM();
-        photographersSection.appendChild(userCardDOM);
+    photographerModel.getPhotographerHeader();
+};
+
+function displayMediasData(medias) {
+    const imagesSection = document.querySelector(".images-section")
+    medias.forEach((media) => {
+        const mediaModel = mediaFactory(media);
+        const userImageDOM = mediaModel.getImageCardDOM();
+        imagesSection.appendChild(userImageDOM);
     });
 };
 
 async function init() {
     const {photographer, medias} = await getPhotographers();
-    console.log(photographer, medias);
-    // displayData(photographers);
+    displayPhotographerData(photographer);
+    displayMediasData(medias);
 };
 
 init();

@@ -2,6 +2,7 @@
 <html>
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -13,25 +14,45 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <div>
+          <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        </div>
       </div>
+      <section class="sort-image">
+        <label for="sort-select">Trier par</label>
+        <select name="sort-select" id="sort-select">
+          <option value="popularité">Popularité</option>
+          <option value="date">Date</option>
+          <option value="titre">Titre</option>
+        </select>
+      </section>
+      <section class="images-section"></section>
     </main>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
+          <div class="modal-header-title">
+            <h2>Contactez-moi</h2>
+          </div>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
+				<form onsubmit="return validate();">
 					<div>
 						<label>Prénom</label>
-						<input />
+						<input id="surname" required />
+            <label>Nom</label>
+						<input id="firstname" required />
+            <label>Email</label>
+						<input id="email" required />
+            <label>Votre message</label>
+						<textarea id="message" required ></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
     <script type="module" src="./scripts/pages/photographer.js"></script>
-    <script type="module" src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/utils/sortFilter.js"></script>
   </body>
 </html>

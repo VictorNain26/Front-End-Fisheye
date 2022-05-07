@@ -39,11 +39,16 @@
 
 .photograph-header {
     display: flex;
+    justify-content: center;
     align-items: center;
-    background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
-}
+    width: 62vw;
+    margin: 0 auto;
+    margin-top: 32px;
+    margin-bottom: 34px;
+    padding: 0 42px;
+    background-color: #FAFAFA;
+  }
 
 .photograph-header img {
     width: 200px;
@@ -51,7 +56,6 @@
     object-fit: cover;
     border-radius: 50%;
 }
-
 
 .photograph-header div:first-child {
     flex-basis: 100%;
@@ -78,6 +82,11 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact_button:hover {
+    background-color: #901c1cd6;
 }
 
 .modal {
@@ -136,6 +145,11 @@ form input {
     border-radius: 5px;
 }
 
+.sort-image {
+  width: 65vw;
+  margin: 0 auto;
+}
+
 .sort-image select {
     width: 120px;
     border-bottom: 1px white solid;
@@ -147,16 +161,98 @@ form input {
     border-bottom: 1px white solid;
 }
 
-.images-section img {
-    width: 350px;
-    height: 300px;
-    border-radius: 5px;
-    object-fit: cover;
+.images-section {
+  display: grid;
+  width: 70vw;
+  margin: 0 auto;
+  margin-bottom: 48px;
+  margin-top: 75px;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2ch;
+  text-align: center;
 }
 
-.images-section video {
-    width: 350px;
-    height: 300px;
-    border-radius: 5px;
-    object-fit: cover;
+.images-section > article > video {
+  width: 350px;
+  height: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.images-section > article > img {
+  width: 350px;
+  height: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.images-section > article > img:hover {
+  filter: blur(2px);
+}
+
+.images-section > article > video:hover {
+  filter: blur(2px);
+}
+
+.images-section > article > div {
+    display: flex;
+    width: 78%;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+.label-sort-select {
+    margin-right: 24px;
+}
+
+#sort-select{
+    padding: 8px;
+    border-bottom: solid white 2px;
+    border-radius: 8px;
+}
+
+#sort-select > option {
+    padding: 8px;
+    border-bottom: solid white 2px;
+    background-color: #901C1C;
+}
+
+#like-price-container {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  right: 24px;
+  width: 376px;
+  height: 60px;
+  border-radius: 5px 5px 0 0;
+  background-color: #DB8876;
+}
+
+#like-price-container span {
+  font-size: 24px;
+}
+
+#price {
+  padding-right: 32px;
+}
+
+#like {
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+}
+
+.like-container > i {
+  margin-left: 8px;
 }

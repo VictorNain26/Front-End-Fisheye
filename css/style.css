@@ -20,7 +20,9 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 77%;
     height: 90px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -37,6 +39,8 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
+    width: 80%;
+    margin: 0 auto;
     margin-top: 100px;
 }
 

@@ -228,8 +228,8 @@ form input {
   align-items: center;
   bottom: 0;
   right: 24px;
-  width: 376px;
-  height: 60px;
+  width: 340px;
+  height: 45px;
   border-radius: 5px 5px 0 0;
   background-color: #DB8876;
 }
@@ -246,6 +246,11 @@ form input {
   display: flex;
   align-items: center;
   padding-left: 32px;
+}
+
+#like > .fas {
+  font-size: 18px;
+  margin-left: 4px;
 }
 
 .like-container {

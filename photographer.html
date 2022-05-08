@@ -15,7 +15,6 @@
     />
     <script type="module" src="./scripts/pages/photographer.js" async></script>
     <script src="/scripts/utils/contactForm.js" async></script>
-    <script src="/scripts/utils/sortFilter.js" async></script>
   </head>
   <body>
     <header>
@@ -29,8 +28,8 @@
       </div>
       <section class="sort-image">
         <label class="label-sort-select" for="sort-select">Trier par</label>
-        <select name="sort-select" id="sort-select">
-          <option value="popularité">Popularité</option>
+        <select name="sort-select" id="sort-select" autocomplete="off">
+          <option value="popularité" selected>Popularité</option>
           <option value="date">Date</option>
           <option value="titre">Titre</option>
         </select>

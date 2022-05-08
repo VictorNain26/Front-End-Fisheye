@@ -5,6 +5,9 @@ export default function mediaFactory(data) {
   const picture = `assets/images/${image}`;
   const movie = `assets/images/${video}`;
 
+  const lightbox = (medias) => {
+  }
+
   function getImageCardDOM() {
     const article = document.createElement('article');
     const infoContainer = document.createElement('div');
@@ -34,6 +37,8 @@ export default function mediaFactory(data) {
     infoContainer.appendChild(h3);
     infoContainer.appendChild(likeContainer);
     article.appendChild(infoContainer);
+
+
 
     return (article);
   }

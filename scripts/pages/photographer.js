@@ -15,16 +15,57 @@ const getPhotographersOrMedias = async () => {
   return { photographer, medias };
 }
 
-const updateLikes = (heartsLikes, medias) => {
+const updateLikes = (heartsLikes) => {
+  const TotalLikes = document.querySelector('#like > span');
+  let TotalLikesNumber = Number(document.querySelector('#like > span').textContent);
+
   heartsLikes.forEach((heartLike, index) => {
+    const cardLikes = document.querySelectorAll('.like-container > p')[index];
+    let cardLikesNumber = Number(document.querySelectorAll('.like-container > p')[index].textContent);
+
     heartLike.addEventListener('click', () => {
       if (heartLike.classList.contains('liked')) {
         heartLike.classList.remove('liked')
-        console.log(medias[index].price);
+        cardLikesNumber -= 1;
+        TotalLikesNumber -= 1;
       } else {
         heartLike.classList.add('liked')
+        cardLikesNumber += 1;
+        TotalLikesNumber += 1;
       }
+      cardLikes.textContent = cardLikesNumber;
+      TotalLikes.textContent = TotalLikesNumber;
     })
+  })
+}
+
+const sortMedias = (medias) => {
+  const imagesSection = document.querySelector('.images-section');
+  const sortSelect = document.querySelector("#sort-select")
+
+  sortSelect.addEventListener("change", () => {
+    switch (sortSelect.value) {
+      case "titre":
+        medias.sort((a, b) => a.title.localeCompare(b.title));
+        break;
+      case "date":
+        medias.sort((a, b) => new Date(b.date) - new Date(a.date));
+        break;
+      case "popularité":
+        medias.sort((a, b) => parseFloat(b.likes) - parseFloat(a.likes));
+        break;
+    }
+    while (imagesSection.firstChild) {
+      imagesSection.removeChild(imagesSection.firstChild);
+    }
+    medias.forEach((media) => {
+      const mediaModel = mediaFactory(media);
+      const userImageDOM = mediaModel.getImageCardDOM();
+      imagesSection.appendChild(userImageDOM);
+    });
+    const heartsLikes = document.querySelectorAll('.far');
+
+    updateLikes(heartsLikes);
   })
 }
 
@@ -46,6 +87,7 @@ const displayPhotographerData = (photographer) => {
 const displayMediasData = (medias) => {
   const imagesSection = document.querySelector('.images-section');
   let totalPrice = 0;
+  medias.sort((a, b) => parseFloat(b.likes) - parseFloat(a.likes));
 
   medias.forEach((media) => {
     const mediaModel = mediaFactory(media);
@@ -54,12 +96,15 @@ const displayMediasData = (medias) => {
     totalPrice += media.price
   });
 
+
   const heartsLikes = document.querySelectorAll('.far');
   const likes = document.querySelector('#like')
   const likeNumber = document.createElement('span')
   likeNumber.textContent = totalPrice;
   likes.insertAdjacentElement('afterbegin', likeNumber);
-  updateLikes(heartsLikes, medias);
+
+  sortMedias(medias);
+  updateLikes(heartsLikes);
 }
 
 const init = async () => {

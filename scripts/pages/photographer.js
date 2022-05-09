@@ -15,7 +15,8 @@ const getPhotographersOrMedias = async () => {
   return { photographer, medias };
 }
 
-const updateLikes = (heartsLikes) => {
+const updateLikes = () => {
+  const heartsLikes = document.querySelectorAll('.far');
   const TotalLikes = document.querySelector('#like > span');
   let TotalLikesNumber = Number(document.querySelector('#like > span').textContent);
 
@@ -39,33 +40,38 @@ const updateLikes = (heartsLikes) => {
   })
 }
 
-const sortMedias = (medias) => {
+const lightBox = (medias) => {
+  // console.log(medias);
+}
+
+const OpenLightBox = (medias) => {
+  const photographerPictures = document.querySelectorAll('.images-section > article > img')
+
+  photographerPictures.forEach((photographerPicture) => {
+    photographerPicture.addEventListener('click', () => {
+      lightBox(medias);
+    })
+  })
+}
+
+const sortMedias = () => {
   const imagesSection = document.querySelector('.images-section');
   const sortSelect = document.querySelector("#sort-select")
 
   sortSelect.addEventListener("change", () => {
-    switch (sortSelect.value) {
-      case "titre":
-        medias.sort((a, b) => a.title.localeCompare(b.title));
-        break;
-      case "date":
-        medias.sort((a, b) => new Date(b.date) - new Date(a.date));
-        break;
-      case "popularité":
-        medias.sort((a, b) => parseFloat(b.likes) - parseFloat(a.likes));
-        break;
+    const sortSection = [...imagesSection.children];
+
+    if (sortSelect.value === 'titre') {
+      sortSection.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    } else if (sortSelect.value === 'popularité') {
+      sortSection.sort((a, b) => parseFloat(b.children[1].children[1].textContent) - parseFloat(a.children[1].children[1].textContent));
+    } else {
+      sortSection.sort((a, b) => Date.parse(b.dataset.date) - Date.parse(a.dataset.date));
     }
     while (imagesSection.firstChild) {
       imagesSection.removeChild(imagesSection.firstChild);
     }
-    medias.forEach((media) => {
-      const mediaModel = mediaFactory(media);
-      const userImageDOM = mediaModel.getImageCardDOM();
-      imagesSection.appendChild(userImageDOM);
-    });
-    const heartsLikes = document.querySelectorAll('.far');
-
-    updateLikes(heartsLikes);
+    sortSection.forEach((nodeElement) => imagesSection.appendChild(nodeElement));
   })
 }
 
@@ -97,14 +103,14 @@ const displayMediasData = (medias) => {
   });
 
 
-  const heartsLikes = document.querySelectorAll('.far');
   const likes = document.querySelector('#like')
   const likeNumber = document.createElement('span')
   likeNumber.textContent = totalPrice;
   likes.insertAdjacentElement('afterbegin', likeNumber);
 
-  sortMedias(medias);
-  updateLikes(heartsLikes);
+  sortMedias();
+  updateLikes();
+  OpenLightBox(medias);
 }
 
 const init = async () => {

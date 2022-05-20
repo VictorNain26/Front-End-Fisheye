@@ -261,3 +261,75 @@ form input {
 .like-container > i {
   margin-left: 8px;
 }
+
+.lightbox-background {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.lightbox-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-container > p {
+  align-self: flex-start;
+  margin-top: 12px;
+  margin-left: 64px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 31px;
+  color: #911C1C;
+}
+
+.lightbox-container-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  height: 850px;
+}
+
+.lightbox-container i {
+  font-size: 50px;
+  color: #911C1C;
+  cursor: pointer;
+}
+
+.lightbox-container-main > img {
+  height: 100%;
+  margin: 0 32px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.lightbox-container-main > video {
+  height: 100%;
+  margin: 0 32px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.lightbox-aside {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox-aside > img {
+  position: absolute;
+  top: 12px;
+  filter: invert(20%) sepia(47%) saturate(4055%) hue-rotate(345deg) brightness(73%) contrast(96%);
+  cursor: pointer;
+}

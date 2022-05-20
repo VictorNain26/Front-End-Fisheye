@@ -1,6 +1,6 @@
 export default function mediaFactory(data) {
   const {
-    image, likes, price, title, video, date
+    id, image, likes, price, title, video, date
   } = data;
   const picture = `assets/images/${image}`;
   const movie = `assets/images/${video}`;
@@ -21,11 +21,15 @@ export default function mediaFactory(data) {
     if (image) {
       const img = document.createElement('img');
       img.setAttribute('src', picture);
+      img.setAttribute('data-id', id);
+      img.setAttribute('data-type', 'image');
       article.appendChild(img);
     } else {
       const video = document.createElement('source');
       const videoContainer = document.createElement('video');
       video.setAttribute('src', movie);
+      video.setAttribute('data-id', id);
+      video.setAttribute('data-type', 'video');
       article.appendChild(videoContainer);
       videoContainer.appendChild(video);
     }

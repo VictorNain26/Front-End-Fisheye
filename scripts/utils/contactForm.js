@@ -1,24 +1,47 @@
-const modal = document.getElementById("contact_modal");
+export default class contactForm {
+	constructor() {};
 
-function displayModal() {
-	modal.style.display = "block";
-}
+	static init = (photographer) => {
+		const modal = document.getElementById("contact_modal");
 
-function closeModal() {
-    modal.style.display = "none";
-}
+		this.modalName(photographer);
+		this.displayModal(modal);
+		this.closeModal(modal);
+		this.validate(modal);
+	}
 
-function validate() {
-    event.preventDefault();
-    const form = document.querySelector("form");
-    const firstName = document.querySelector("#firstname");
-    const surName = document.querySelector("#surname");
-    const email = document.querySelector("#email");
-    const message = document.querySelector("#message");
+	static displayModal = (modal) => {
+		document.querySelector('.contact_button').addEventListener('click', () => {
+			modal.style.display = "block";
+		})
+	}
 
-    console.log(`Firstname: ${firstName.value}, Surname: ${surName.value}`);
-    console.log(`Email: ${email.value}, Message: ${message.value}`);
+	static closeModal = (modal) => {
+		document.querySelector('#close-form-modal').addEventListener('click', () => {
+			modal.style.display = "none";
+		})
+	}
 
-    modal.style.display = "none";
-    form.reset();
+	static validate = (modal) => {
+		document.querySelector('form').addEventListener('submit', (e) => {
+			e.preventDefault();
+			const form = document.querySelector("form");
+			const firstName = document.querySelector("#firstname");
+			const surName = document.querySelector("#surname");
+			const email = document.querySelector("#email");
+			const message = document.querySelector("#message");
+
+			console.log(`Firstname: ${firstName.value}, Surname: ${surName.value}`);
+			console.log(`Email: ${email.value}, Message: ${message.value}`);
+
+			modal.style.display = "none";
+			form.reset();
+		})
+	}
+
+	static modalName = (photographer) => {
+		const formName = document.querySelector('.modal h2');
+
+		formName.textContent += `Contactez-moi ${photographer.name}`;
+	}
 }

@@ -14,7 +14,6 @@
     crossorigin="anonymous"
     />
     <script type="module" src="./scripts/pages/photographer.js" async></script>
-    <script src="./scripts/utils/contactForm.js" async></script>
   </head>
   <body>
     <header>
@@ -23,7 +22,7 @@
     <main id="main">
       <div class="photograph-header">
         <div>
-          <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+          <button class="contact_button">Contactez-moi</button>
         </div>
       </div>
       <section class="sort-image">
@@ -40,11 +39,11 @@
 			<div class="modal">
 				<header>
           <div class="modal-header-title">
-            <h2>Contactez-moi</h2>
+            <h2></h2>
           </div>
-          <img src="./assets/icons/close.svg" onclick="closeModal()" />
+          <img id="close-form-modal" src="./assets/icons/close.svg"/>
         </header>
-				<form onsubmit="validate();">
+				<form>
 					<div>
 						<label>Prénom</label>
 						<input id="surname" required />

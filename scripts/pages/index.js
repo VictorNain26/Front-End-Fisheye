@@ -1,9 +1,7 @@
-import photographerFactory from '../factories/photographerFactory.js';
+import photographerFactory from './../factories/photographerFactory.js';
 
-
-// à mettre dans un factory pattern
 const getPhotographers = () => {
-  return fetch('./../../data/photographers.json')
+  return fetch('data/photographers.json')
   .then((res) => res.json());
 }
 

@@ -1,14 +1,14 @@
-import photographerFactory from '../factories/photographerFactory.js';
-import mediaFactory from '../factories/mediaFactory.js';
+import photographerFactory from './../factories/photographerFactory.js';
+import mediaFactory from './../factories/mediaFactory.js';
 
 const getPhotographersOrMedias = async () => {
   const photographerId = (new URL(document.location)).searchParams.get('id');
 
-  const medias = await fetch('./../../data/medias.json')
+  const medias = await fetch('data/medias.json')
     .then((res) => res.json())
     .then((data) => data.filter((ele) => ele.photographerId === parseInt(photographerId)));
 
-  const photographer = await fetch('./../../data/photographers.json')
+  const photographer = await fetch('data/photographers.json')
     .then((res) => res.json())
     .then((data) => data.filter((ele) => ele.id === parseInt(photographerId)).shift());
 

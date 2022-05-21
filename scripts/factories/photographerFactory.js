@@ -51,7 +51,7 @@ export default function photographerFactory(data) {
     h2.textContent = name;
 
     a.appendChild(article);
-    a.href = `${window.location}photographer.html?id=${id}`;
+    a.href = `photographer.html?id=${id}`;
     return (a);
   }
 

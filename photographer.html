@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <link href="./css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
@@ -14,11 +14,11 @@
     crossorigin="anonymous"
     />
     <script type="module" src="./scripts/pages/photographer.js" async></script>
-    <script src="/scripts/utils/contactForm.js" async></script>
+    <script src="./scripts/utils/contactForm.js" async></script>
   </head>
   <body>
     <header>
-      <a href="/"><img src="assets/images/logo.png" class="logo" /></a>
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
     </header>
     <main id="main">
       <div class="photograph-header">
@@ -42,7 +42,7 @@
           <div class="modal-header-title">
             <h2>Contactez-moi</h2>
           </div>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="./assets/icons/close.svg" onclick="closeModal()" />
         </header>
 				<form onsubmit="validate();">
 					<div>
@@ -77,7 +77,7 @@
               <source id="lightbox-video" src=""></source>
             </video>
             <div class="lightbox-aside">
-              <img id="close-lightbox" src="assets/icons/close.svg" onclick="closeLightboxModal()" />
+              <img id="close-lightbox" src="./assets/icons/close.svg" onclick="closeLightboxModal()" />
               <i id="lightbox-next" class="fas fa-chevron-right"></i>
             </div>
           </div>

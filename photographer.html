@@ -20,10 +20,17 @@
       <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <div>
-          <button class="contact_button">Contactez-moi</button>
-        </div>
+      <div class="photographer-header">
+        <section>
+          <p id="photographer-name"></p>
+          <p id="photographer-country-city"></p>
+          <p id="photographer-tag"></p>
+        </section>
+        <section>
+          <button class="contact-button">Contactez-moi</button>
+        </section>
+        <section id="photographer-picture">
+        </section>
       </div>
       <section class="sort-image">
         <label class="label-sort-select" for="sort-select">Trier par</label>
@@ -35,7 +42,7 @@
       </section>
       <section class="images-section"></section>
     </main>
-    <div id="contact_modal">
+    <div id="contact-modal">
 			<div class="modal">
 				<header>
           <div class="modal-header-title">
@@ -54,7 +61,7 @@
             <label>Votre message</label>
 						<textarea id="message" required ></textarea>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact-button">Envoyer</button>
 				</form>
 			</div>
 		</div>
@@ -71,8 +78,8 @@
         <div class="lightbox-container">
           <div class="lightbox-container-main">
             <i id="lightbox-previous" class="fas fa-chevron-left"></i>
-            <img id="lightbox-image" src="" alt="">
-            <video id="video" autoplay loop muted>
+            <img id="lightbox-image">
+            <video id="video" controls autoplay loop muted>
               <source id="lightbox-video" src=""></source>
             </video>
             <div class="lightbox-aside">

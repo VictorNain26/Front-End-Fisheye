@@ -6,28 +6,21 @@ export default class photographersBanner {
     const {
       name, portrait, country, city, tagline,
     } = data;
-    const picture = `assets/photographers/${portrait}`;
-    const photographHeader = document.querySelector('.photograph-header');
 
-    const div = document.createElement('div');
-    const divImage = document.createElement('div');
-    const h2 = document.createElement('h2');
-    const pCityCountry = document.createElement('p');
-    const pTagline = document.createElement('p');
+    const picture = `assets/photographers/${portrait}`;
+    const photographerName = document.querySelector('#photographer-name');
+    const photographerCountryCity = document.querySelector('#photographer-country-city');
+    const photographerTag = document.querySelector('#photographer-tag');
+    const photographerPicture = document.querySelector('#photographer-picture');
+
     const img = document.createElement('img');
 
     img.setAttribute('src', picture);
+    img.setAttribute('alt', name);
 
-    div.appendChild(h2);
-    div.appendChild(pCityCountry);
-    div.appendChild(pTagline);
-    divImage.appendChild(img);
-
-    h2.textContent = name;
-    pCityCountry.textContent = `${city}, ${country}`;
-    pTagline.textContent = tagline;
-
-    photographHeader.appendChild(divImage);
-    photographHeader.insertAdjacentElement('afterbegin', div);
+    photographerName.textContent = name;
+    photographerCountryCity.textContent = `${city} ${country}`;
+    photographerTag.textContent = tagline;
+    photographerPicture.appendChild(img);
   };
 }

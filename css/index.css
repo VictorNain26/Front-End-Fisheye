@@ -1,4 +1,4 @@
-.photographer_section {
+.photographer-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
@@ -7,7 +7,7 @@
   margin-top: 100px;
 }
 
-.photographer_section a article {
+.photographer-section a article {
   justify-self: center;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
   flex-direction: column;
 }
 
-.photographer_section a article h2 {
+.photographer-section a article h2 {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -25,7 +25,7 @@
   color: #D3573C;
 }
 
-.photographer_section a article p:nth-child(3n) {
+.photographer-section a article p:nth-child(3n) {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -35,7 +35,7 @@
   color: #901C1C;
 }
 
-.photographer_section a article p:nth-child(4n) {
+.photographer-section a article p:nth-child(4n) {
   margin-top: 2px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -46,7 +46,7 @@
   color: #000000;
 }
 
-.photographer_section a article p:nth-child(5n) {
+.photographer-section a article p:nth-child(5n) {
   margin-top: 2px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -57,17 +57,17 @@
   color: #757575;
 }
 
-.photographer_section a article img {
+.photographer-section a article img {
   height: 200px;
   width: 200px;
   transition: transform 0.3s ease;
 }
 
-.photographer_section a:hover > article img {
+.photographer-section a:hover > article img {
   transform: scale(0.9)
 }
 
-.photographer_section article img {
+.photographer-section article img {
   height: 200px;
   width: 200px;
   border-radius: 50%;

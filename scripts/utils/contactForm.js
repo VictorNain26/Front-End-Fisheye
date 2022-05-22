@@ -2,7 +2,7 @@ export default class contactForm {
 	constructor() {};
 
 	static init = (photographer) => {
-		const modal = document.getElementById("contact_modal");
+		const modal = document.getElementById("contact-modal");
 
 		this.modalName(photographer);
 		this.displayModal(modal);
@@ -11,7 +11,7 @@ export default class contactForm {
 	}
 
 	static displayModal = (modal) => {
-		document.querySelector('.contact_button').addEventListener('click', () => {
+		document.querySelector('.contact-button').addEventListener('click', () => {
 			modal.style.display = "block";
 		})
 	}

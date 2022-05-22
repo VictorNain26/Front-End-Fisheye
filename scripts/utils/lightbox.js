@@ -17,11 +17,25 @@ export default class lightbox {
       this.lightBoxDisplay(medias, media.target.children[0].dataset.id, media.target.children[0].dataset.type);
     })
 
+    photographerVideo.addEventListener('keydown', (e) => {
+      if  (e.key === "Enter") {
+        lightboxContainer.style.display = 'flex';
+        document.body.style.overflow = 'hidden'
+        this.lightBoxDisplay(medias, e.target.children[0].dataset.id, e.target.children[0].dataset.type);
+      }
+    })
+
     photographerPictures.forEach((photographerPicture) => {
       photographerPicture.addEventListener('click', (media) => {
         lightboxContainer.style.display = 'flex';
         document.body.style.overflow = 'hidden'
         this.lightBoxDisplay(medias, media.target.dataset.id, media.target.dataset.type);
+      })
+      photographerPicture.addEventListener('keydown', (e) => {
+        if  (e.key !== "Enter") return;
+        lightboxContainer.style.display = 'flex';
+        document.body.style.overflow = 'hidden'
+        this.lightBoxDisplay(medias, e.target.dataset.id, e.target.dataset.type);
       })
     })
   }
@@ -74,9 +88,10 @@ export default class lightbox {
         lightboxImage.src = `./assets/images/${medias[imageIndex].image}`;
         Video.style.display = 'none';
         lightboxImage.style.display = 'flex';
-        Video.pause();
       } else {
-        Video.play();
+        lightboxVideo.src = `./assets/images/${medias[imageIndex].video}`;
+        Video.load();
+
         lightboxImage.style.display = 'none';
         Video.style.display = 'flex';
       }
@@ -90,9 +105,10 @@ export default class lightbox {
         lightboxImage.src = `./assets/images/${medias[imageIndex].image}`;
         Video.style.display = 'none';
         lightboxImage.style.display = 'flex';
-        Video.pause();
       } else {
-        Video.play();
+        lightboxVideo.src = `./assets/images/${medias[imageIndex].video}`;
+        Video.load();
+
         lightboxImage.style.display = 'none';
         Video.style.display = 'flex';
       }
@@ -107,9 +123,10 @@ export default class lightbox {
           lightboxImage.src = `./assets/images/${medias[imageIndex].image}`;
           Video.style.display = 'none';
           lightboxImage.style.display = 'flex';
-          Video.pause();
         } else {
-          Video.play();
+          lightboxVideo.src = `./assets/images/${medias[imageIndex].video}`;
+          Video.load();
+
           lightboxImage.style.display = 'none';
           Video.style.display = 'flex';
         }
@@ -124,9 +141,10 @@ export default class lightbox {
           lightboxImage.src = `./assets/images/${medias[imageIndex].image}`;
           Video.style.display = 'none';
           lightboxImage.style.display = 'flex';
-          Video.pause();
         } else {
-          Video.play();
+          lightboxVideo.src = `./assets/images/${medias[imageIndex].video}`;
+          Video.load();
+
           lightboxImage.style.display = 'none';
           Video.style.display = 'flex';
         }

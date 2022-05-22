@@ -8,7 +8,7 @@ export default class photographerFactory {
       return photographerCard.init(data);
     }
     else {
-      return photographerBanner.init(data);
+      photographerBanner.init(data);
     }
   }
 }

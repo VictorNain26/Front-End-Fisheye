@@ -8,6 +8,8 @@ export default class updateLike {
 
     heartsLikes.forEach((heartLike, index) => {
       const cardLikes = document.querySelectorAll('.like-container > p')[index];
+      const emptyHeart = document.querySelectorAll('.empty-heart')[index];
+      const heart = document.querySelectorAll('.heart')[index];
       let cardLikesNumber = Number(document.querySelectorAll('.like-container > p')[index].textContent);
 
       heartLike.addEventListener('click', () => {
@@ -15,10 +17,14 @@ export default class updateLike {
           heartLike.classList.remove('liked')
           cardLikesNumber -= 1;
           TotalLikesNumber -= 1;
+          emptyHeart.style.opacity = 1;
+          heart.style.opacity = 0;
         } else {
           heartLike.classList.add('liked')
           cardLikesNumber += 1;
           TotalLikesNumber += 1;
+          emptyHeart.style.opacity = 0;
+          heart.style.opacity = 1;
         }
         cardLikes.textContent = cardLikesNumber;
         TotalLikes.textContent = TotalLikesNumber;

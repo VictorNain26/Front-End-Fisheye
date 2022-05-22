@@ -16,7 +16,6 @@ export default class sortMedias {
         sortSection.sort((a, b) => {
           return Date.parse(b.dataset.date) - Date.parse(a.dataset.date)
         });
-
       }
       while (imagesSection.firstChild) {
         imagesSection.removeChild(imagesSection.firstChild);

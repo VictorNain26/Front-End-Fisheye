@@ -22,6 +22,8 @@ export default class PhotographerCard {
     article.appendChild(pPrice);
 
     img.setAttribute('src', picture);
+    img.setAttribute('alt', name);
+
     pCityCountry.textContent = `${city}, ${country}`;
     pTagline.textContent = tagline;
     pPrice.textContent = `${price}Є/jour`;

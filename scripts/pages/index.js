@@ -1,20 +1,20 @@
 import photographerFactory from './../factories/photographerFactory.js';
 import fetchData from './../factories/fetchData.js';
 
-const displayData = (photographers) => {
+const displayPhotographers = (photographers) => {
   const photographersSection = document.querySelector('.photographer_section');
 
   photographers.forEach((photographer) => {
-    const photographerModel = photographerFactory(photographer);
-    const userCardDOM = photographerModel.getUserCardDOM();
+    const photographerCard = photographerFactory.init(photographer, 'photographerCard');
 
-    photographersSection.appendChild(userCardDOM);
+    photographersSection.appendChild(photographerCard);
   });
 }
 
 const init = async () => {
   const photographers = await fetchData.getAllPhotographers();
-  displayData(photographers);
+
+  displayPhotographers(photographers);
 }
 
 init();

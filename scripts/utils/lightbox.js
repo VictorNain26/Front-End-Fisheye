@@ -6,7 +6,43 @@ export default class lightbox {
     this.closeLightBox();
   }
 
-  static lightBox = (medias, mediaId) => {
+  static openLightBox = (medias) => {
+    const lightboxContainer = document.querySelector('.lightbox-background');
+    const photographerPictures = document.querySelectorAll('.images-section > article > img');
+    const photographerVideo = document.querySelector('.images-section > article > video');
+
+    photographerVideo.addEventListener('click', (media) => {
+      lightboxContainer.style.display = 'flex';
+      document.body.style.overflow = 'hidden'
+      this.lightBoxDisplay(medias, media.target.children[0].dataset.id, media.target.children[0].dataset.type);
+    })
+
+    photographerPictures.forEach((photographerPicture) => {
+      photographerPicture.addEventListener('click', (media) => {
+        lightboxContainer.style.display = 'flex';
+        document.body.style.overflow = 'hidden'
+        this.lightBoxDisplay(medias, media.target.dataset.id, media.target.dataset.type);
+      })
+    })
+  }
+
+  static closeLightBox = () => {
+    const lightboxContainer = document.querySelector('.lightbox-background');
+    const closeButton = document.querySelector('#close-lightbox');
+
+    closeButton.addEventListener('click', () => {
+      document.body.style.overflow = 'scroll'
+      lightboxContainer.style.display = 'none';
+    })
+
+    document.addEventListener('keydown', (e) => {
+      if  (e.key !== "Escape") return;
+      document.body.style.overflow = 'scroll'
+      lightboxContainer.style.display = 'none';
+    })
+  }
+
+  static lightBoxDisplay = (medias, mediaId) => {
     const lightboxImage = document.querySelector('#lightbox-image');
     const lightboxVideo = document.querySelector('#lightbox-video');
     const Video = document.querySelector('#video');
@@ -38,10 +74,9 @@ export default class lightbox {
         lightboxImage.src = `./assets/images/${medias[imageIndex].image}`;
         Video.style.display = 'none';
         lightboxImage.style.display = 'flex';
+        Video.pause();
       } else {
-        lightboxVideo.src = `./assets/images/${medias[imageIndex].video}`;
-        Video.load();
-
+        Video.play();
         lightboxImage.style.display = 'none';
         Video.style.display = 'flex';
       }
@@ -55,10 +90,9 @@ export default class lightbox {
         lightboxImage.src = `./assets/images/${medias[imageIndex].image}`;
         Video.style.display = 'none';
         lightboxImage.style.display = 'flex';
+        Video.pause();
       } else {
-        lightboxVideo.src = `./assets/images/${medias[imageIndex].video}`;
-        Video.load();
-
+        Video.play();
         lightboxImage.style.display = 'none';
         Video.style.display = 'flex';
       }
@@ -73,10 +107,9 @@ export default class lightbox {
           lightboxImage.src = `./assets/images/${medias[imageIndex].image}`;
           Video.style.display = 'none';
           lightboxImage.style.display = 'flex';
+          Video.pause();
         } else {
-          lightboxVideo.src = `./assets/images/${medias[imageIndex].video}`;
-          Video.load();
-
+          Video.play();
           lightboxImage.style.display = 'none';
           Video.style.display = 'flex';
         }
@@ -91,50 +124,13 @@ export default class lightbox {
           lightboxImage.src = `./assets/images/${medias[imageIndex].image}`;
           Video.style.display = 'none';
           lightboxImage.style.display = 'flex';
+          Video.pause();
         } else {
-          lightboxVideo.src = `./assets/images/${medias[imageIndex].video}`;
-          Video.load();
-
+          Video.play();
           lightboxImage.style.display = 'none';
           Video.style.display = 'flex';
         }
       }
     });
-  }
-
-  static closeLightBox = () => {
-    const lightboxContainer = document.querySelector('.lightbox-background');
-    const closeButton = document.querySelector('#close-lightbox');
-
-    closeButton.addEventListener('click', () => {
-      document.body.style.overflow = 'scroll'
-      lightboxContainer.style.display = 'none';
-    })
-
-    document.addEventListener('keydown', (e) => {
-      if  (e.key !== "Escape") return;
-      document.body.style.overflow = 'scroll'
-      lightboxContainer.style.display = 'none';
-    })
-  }
-
-  static openLightBox = (medias) => {
-    const lightboxContainer = document.querySelector('.lightbox-background');
-    const photographerPictures = document.querySelectorAll('.images-section > article > img');
-    const photographerVideo = document.querySelector('.images-section > article > video');
-
-    photographerVideo.addEventListener('click', (media) => {
-      lightboxContainer.style.display = 'flex';
-      document.body.style.overflow = 'hidden'
-      this.lightBox(medias, media.target.children[0].dataset.id, media.target.children[0].dataset.type);
-    })
-
-    photographerPictures.forEach((photographerPicture) => {
-      photographerPicture.addEventListener('click', (media) => {
-        lightboxContainer.style.display = 'flex';
-        document.body.style.overflow = 'hidden'
-        this.lightBox(medias, media.target.dataset.id, media.target.dataset.type);
-      })
-    })
   }
 };

@@ -5,6 +5,8 @@ export default function mediaFactory(data) {
   const picture = `assets/images/${image}`;
   const movie = `assets/images/${video}`;
 
+  // mettre ce code dans un fichier à part et l'appeler ici
+  // Et separer image et video
   function getImageCardDOM() {
     const article = document.createElement('article');
     const infoContainer = document.createElement('div');

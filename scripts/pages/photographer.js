@@ -29,7 +29,6 @@ const displayMediasData = (medias) => {
     totalPrice += media.price
   });
 
-
   const likes = document.querySelector('#like')
   const likeNumber = document.createElement('span')
   likeNumber.textContent = totalPrice;

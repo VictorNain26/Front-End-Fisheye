@@ -1,6 +1,4 @@
 export default class updateLike {
-  constructor() {};
-
   static init = () => {
     const heartsLikes = document.querySelectorAll('.far');
     const TotalLikes = document.querySelector('#like > span');
@@ -14,13 +12,13 @@ export default class updateLike {
 
       heartLike.addEventListener('click', () => {
         if (heartLike.classList.contains('liked')) {
-          heartLike.classList.remove('liked')
+          heartLike.classList.remove('liked');
           cardLikesNumber -= 1;
           TotalLikesNumber -= 1;
           emptyHeart.style.opacity = 1;
           heart.style.opacity = 0;
         } else {
-          heartLike.classList.add('liked')
+          heartLike.classList.add('liked');
           cardLikesNumber += 1;
           TotalLikesNumber += 1;
           emptyHeart.style.opacity = 0;
@@ -28,7 +26,7 @@ export default class updateLike {
         }
         cardLikes.textContent = cardLikesNumber;
         TotalLikes.textContent = TotalLikesNumber;
-      })
-    })
-  }
-};
+      });
+    });
+  };
+}

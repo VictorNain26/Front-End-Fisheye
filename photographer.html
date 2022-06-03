@@ -45,10 +45,8 @@
     <div id="contact-modal">
 			<div class="modal">
 				<header>
-          <div class="modal-header-title">
-            <h2></h2>
-          </div>
-          <img id="close-form-modal" src="./assets/icons/close.svg"/>
+          <h2></h2>
+          <img tabindex="0" aria-labelledby="close form modal" id="close-form-modal" src="./assets/icons/close.svg"/>
         </header>
 				<form>
 					<div>
@@ -80,7 +78,7 @@
             <i id="lightbox-previous" class="fas fa-chevron-left"></i>
             <img id="lightbox-image">
             <video id="video" controls autoplay loop muted>
-              <source id="lightbox-video" src=""></source>
+              <source id="lightbox-video" src=""/>
             </video>
             <div class="lightbox-aside">
               <img id="close-lightbox" src="./assets/icons/close.svg" onclick="closeLightboxModal()" />

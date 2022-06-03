@@ -8,17 +8,17 @@
     z-index: 1;
 }
 
-.modal-header-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+.modal > header {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: flex-start;
 }
 
-.modal-header-title h2 {
+.modal h2 {
     font-weight: 400;
     font-size: 64px;
     line-height: 83px;
+    justify-self: flex-start;
 }
 
 #contact-modal input {
@@ -140,12 +140,6 @@
 
 .modal header img {
     cursor: pointer;
-}
-
-.modal header h2 {
-    font-size: 64px;
-    font-weight: normal;
-    text-align: center;
 }
 
 form {

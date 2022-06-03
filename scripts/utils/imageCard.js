@@ -1,9 +1,7 @@
 export default class imageCard {
-  constructor() {};
-
   static init(media) {
     const {
-      id, image, likes, title, date
+      id, image, likes, title, date,
     } = media;
     const picture = `assets/images/${image}`;
 

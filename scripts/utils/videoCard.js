@@ -1,9 +1,7 @@
 export default class videoCard {
-  constructor() {};
-
   static init(media) {
     const {
-      id, likes, title, video, date
+      id, likes, title, video, date,
     } = media;
     const movie = `assets/images/${video}`;
 
@@ -36,7 +34,6 @@ export default class videoCard {
     infoContainer.appendChild(likeContainer);
     article.dataset.date = date;
     article.appendChild(infoContainer);
-
 
     return (article);
   }

@@ -1,12 +1,8 @@
-export default class photographersBanner {
-  constructor() {};
-
-  // ajouter la création des elements directement dans le HTML
+export default class photographerBanner {
   static init(data) {
     const {
       name, portrait, country, city, tagline,
-    } = data;
-
+    } = data[0];
     const picture = `assets/photographers/${portrait}`;
     const photographerName = document.querySelector('#photographer-name');
     const photographerCountryCity = document.querySelector('#photographer-country-city');
@@ -22,5 +18,5 @@ export default class photographersBanner {
     photographerCountryCity.textContent = `${city} ${country}`;
     photographerTag.textContent = tagline;
     photographerPicture.appendChild(img);
-  };
+  }
 }

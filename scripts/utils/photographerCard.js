@@ -1,6 +1,4 @@
 export default class PhotographerCard {
-  constructor() {}
-
   static init(data) {
     const {
       name, portrait, id, country, city, price, tagline,

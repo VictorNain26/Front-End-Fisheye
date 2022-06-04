@@ -245,18 +245,6 @@ form input {
     margin-right: 24px;
 }
 
-#sort-select{
-    padding: 8px;
-    border-bottom: solid white 2px;
-    border-radius: 8px;
-}
-
-#sort-select > option {
-    padding: 8px;
-    border-bottom: solid white 2px;
-    background-color: #901C1C;
-}
-
 #like-price-container {
   display: flex;
   position: fixed;

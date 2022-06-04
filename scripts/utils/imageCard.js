@@ -18,12 +18,14 @@ export default class imageCard {
     emptyHeart.classList.add('far', 'fa-heart', 'empty-heart');
     heart.classList.add('fas', 'fa-heart', 'heart');
     likeContainer.classList.add('like-container');
+    emptyHeart.setAttribute('tabindex', 0);
 
     const img = document.createElement('img');
     img.setAttribute('src', picture);
     img.setAttribute('data-id', id);
     img.setAttribute('data-type', 'image');
     img.setAttribute('aria-label', title);
+    img.setAttribute('tabindex', 0);
     article.appendChild(img);
 
     likeContainer.appendChild(plikes);

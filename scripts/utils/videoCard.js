@@ -18,6 +18,7 @@ export default class videoCard {
     emptyHeart.classList.add('far', 'fa-heart', 'empty-heart');
     heart.classList.add('fas', 'fa-heart', 'heart');
     likeContainer.classList.add('like-container');
+    emptyHeart.setAttribute('tabindex', 0);
 
     const source = document.createElement('source');
     const videoContainer = document.createElement('video');

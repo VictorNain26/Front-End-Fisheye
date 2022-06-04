@@ -10,6 +10,27 @@ export default class updateLike {
       const heart = document.querySelectorAll('.heart')[index];
       let cardLikesNumber = Number(document.querySelectorAll('.like-container > p')[index].textContent);
 
+      heartLike.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter') return;
+
+        if (heartLike.classList.contains('liked')) {
+          heartLike.classList.remove('liked');
+          cardLikesNumber -= 1;
+          TotalLikesNumber -= 1;
+          emptyHeart.style.opacity = 1;
+          heart.style.opacity = 0;
+        } else {
+          heartLike.classList.add('liked');
+          cardLikesNumber += 1;
+          TotalLikesNumber += 1;
+          emptyHeart.style.opacity = 0;
+          heart.style.opacity = 1;
+        }
+
+        cardLikes.textContent = cardLikesNumber;
+        TotalLikes.textContent = TotalLikesNumber;
+      });
+
       heartLike.addEventListener('click', () => {
         if (heartLike.classList.contains('liked')) {
           heartLike.classList.remove('liked');
@@ -24,6 +45,7 @@ export default class updateLike {
           emptyHeart.style.opacity = 0;
           heart.style.opacity = 1;
         }
+
         cardLikes.textContent = cardLikesNumber;
         TotalLikes.textContent = TotalLikesNumber;
       });

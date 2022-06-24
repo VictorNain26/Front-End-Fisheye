@@ -360,6 +360,7 @@ form input {
 }
 
 .lightbox-container-main > img {
+  max-width: 100%;
   height: 100%;
   margin: 0 32px;
   object-fit: contain;
@@ -367,6 +368,7 @@ form input {
 }
 
 .lightbox-container-main > video {
+  max-width: 100%;
   height: 100%;
   margin: 0 32px;
   object-fit: contain;

@@ -197,8 +197,8 @@ form input {
 }
 
 .images-section > article > video {
-  width: 350px;
-  height: 300px;
+  width: 21.875rem;
+  height: 18.75rem;
   border-radius: 5px;
   object-fit: cover;
   cursor: pointer;
@@ -206,8 +206,8 @@ form input {
 }
 
 .images-section > article > img {
-  width: 350px;
-  height: 300px;
+  width: 21.875rem;
+  height: 18.75rem;
   border-radius: 5px;
   object-fit: cover;
   cursor: pointer;

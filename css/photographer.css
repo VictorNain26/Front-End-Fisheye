@@ -353,7 +353,7 @@ form input {
   height: 90vh;
 }
 
-.lightbox-container i {
+.lightbox-container em {
   font-size: 50px;
   color: #911C1C;
   cursor: pointer;

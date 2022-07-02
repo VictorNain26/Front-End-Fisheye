@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
@@ -14,50 +14,49 @@
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
     crossorigin="anonymous"
     />
-    <script type="module" src="./scripts/pages/photographer.js" defer></script>
+    <script type="module" src="./scripts/pages/photographer.js"></script>
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="logo" /></a>
     </header>
     <main id="main">
       <div class="photographer-header">
-        <section>
+        <div>
           <p id="photographer-name"></p>
           <p id="photographer-country-city"></p>
           <p id="photographer-tag"></p>
-        </section>
-        <section>
+        </div>
+        <div>
           <button class="contact-button">Contactez-moi</button>
-        </section>
-        <section id="photographer-picture">
-        </section>
+        </div>
+        <div id="photographer-picture">
+        </div>
       </div>
-      <section class="sort-image">
+      <div class="sort-image">
         <label class="label-sort-select" for="sort-select">Trier par</label>
         <select name="sort-select" id="sort-select" autocomplete="off">
           <option value="popularité" selected>Popularité</option>
           <option value="date">Date</option>
           <option value="titre">Titre</option>
         </select>
-      </section>
-      <section class="images-section"></section>
+      </div>
+      <div class="images-section"></div>
     </main>
     <div id="contact-modal">
 			<div class="modal">
 				<header>
-          <h2></h2>
-          <img tabindex="0" aria-labelledby="close form modal" id="close-form-modal" src="./assets/icons/close.svg"/>
+          <img tabindex="0" aria-labelledby="close-form-modal" id="close-form-modal" src="./assets/icons/close.svg" alt="close icon"/>
         </header>
 				<form>
 					<div>
-						<label>Prénom</label>
+						<label for="surname">Prénom</label>
 						<input id="surname" required />
-            <label>Nom</label>
+            <label for="firstname">Nom</label>
 						<input id="firstname" required />
-            <label>Email</label>
+            <label for="email">Email</label>
 						<input id="email" required />
-            <label>Votre message</label>
+            <label for="message">Votre message</label>
 						<textarea id="message" required ></textarea>
 					</div>
           <button class="contact-button">Envoyer</button>
@@ -66,7 +65,7 @@
 		</div>
     <div id="like-price-container">
       <div id="like">
-        <i class="fas fa-heart"></i>
+        <em class="fas fa-heart"></em>
       </div>
       <div id="price">
         <span>/ jour</span>
@@ -76,14 +75,14 @@
       <div class="lightbox-background">
         <div class="lightbox-container">
           <div class="lightbox-container-main">
-            <i id="lightbox-previous" class="fas fa-chevron-left"></i>
-            <img id="lightbox-image">
+            <em id="lightbox-previous" class="fas fa-chevron-left"></em>
+            <img id="lightbox-image" alt="lightbox picture">
             <video id="video" controls autoplay loop muted>
               <source id="lightbox-video" src=""/>
             </video>
             <div class="lightbox-aside">
-              <img id="close-lightbox" src="./assets/icons/close.svg" onclick="closeLightboxModal()" />
-              <i id="lightbox-next" class="fas fa-chevron-right"></i>
+              <img id="close-lightbox" src="./assets/icons/close.svg" onclick="closeLightboxModal()" alt="icon close lightbox"/>
+              <em id="lightbox-next" class="fas fa-chevron-right"></em>
             </div>
           </div>
           <p id="lightbox-title"></p>

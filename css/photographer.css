@@ -57,11 +57,11 @@
     border-radius: 50%;
 }
 
-.photographer-header section {
+.photographer-header div {
     flex-basis: 100%;
 }
 
-.photographer-header section p:first-child {
+.photographer-header div p:first-child {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -70,7 +70,7 @@
   color: #D3573C;
 }
 
-.photographer-header section p:nth-child(2n){
+.photographer-header div p:nth-child(2n){
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -79,7 +79,7 @@
   color: #901C1C;
 }
 
-.photographer-header section p:nth-child(3n){
+.photographer-header div p:nth-child(3n){
   margin-top: 14px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -89,12 +89,12 @@
   color: #525252;
 }
 
-.photographer-header section:last-child {
+.photographer-header div:last-child {
     flex-basis: 100%;
     text-align: end;
 }
 
-.photographer-header section:nth-child(2n) {
+.photographer-header div:nth-child(2n) {
     text-align: center;
 }
 

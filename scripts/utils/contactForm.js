@@ -53,8 +53,11 @@ export default class contactForm {
   };
 
   static modalName = (photographer) => {
-    const formName = document.querySelector('.modal h2');
+    const h2 = document.createElement('h2');
+    const formName = document.querySelector('.modal header');
 
-    formName.textContent += `Contactez-moi ${photographer[0].name}`;
+    h2.textContent += `Contactez-moi ${photographer[0].name}`;
+
+    formName.insertAdjacentHTML('afterbegin', h2.outerHTML);
   };
 }
